@@ -2,12 +2,25 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+import Hello from './components/Hello';
 import reportWebVitals from './reportWebVitals';
-
+import './index.css';
+import ListComponent from './components/ListComponent';
+import ContextComp from './components/ContextComp';
+import RouterDom from './components/RouterDom';
+import HOC from './components/hoc/HOC';
+import Counter from "./redux-components/components/CounterComponent"
+import 'bootstrap';
+import 'react-bootstrap';
+import { Provider } from 'react-redux';
+import configureStore from './redux-components/store/configureStore';
+const appStore = configureStore();
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <Provider store={appStore}>
+    <Counter />
+    </Provider>
   </React.StrictMode>
 );
 
